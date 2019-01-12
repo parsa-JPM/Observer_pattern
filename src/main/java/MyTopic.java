@@ -27,6 +27,10 @@ public class MyTopic implements Subject {
         }
     }
 
+    /**
+     * notice the use of synchronization in notifyObservers() method to make sure the notification is sent only
+     * to the observers registered before the message is published to the topic.
+     */
     @Override
     public void notifyObservers() {
         List<Observer> observersLocal = null;
